@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class hotels {
     @GetMapping("/hotels")
 <<<<<<< HEAD
-    public String getData() {return "Please book your hotels for delhi" ; }
+    public String getData() {return "Please book your hotels for Goa" ; }
 }
