@@ -42,7 +42,7 @@ pipeline {
                  echo 'creating war artifact completed successfully!'
                 }
 
-             }
+         }
 
               stage('image scan') {
                              steps {
@@ -54,18 +54,20 @@ pipeline {
 
                           }
 
-stage('Docker push to Docker Hub') {
-steps{
-script｛
-withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
-sh 'docker login docker.io -u snehadevopslearning -p ${dockerhubCred}'
- echo "Push Docker Image to DockerHub: In Progress"
-sh 'docker push snehadevopslearning/cleartrip:latest'
- echo "Push Docker Image to DockerHub : In Progress"
- sh 'whoami'
- }
- }
-}
-}
+               stage('Docker push to Docker Hub') {
+              steps{
+              script｛
+              withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
+              sh 'docker login docker.io -u snehadevopslearning -p ${dockerhubCred}'
+              echo "Push Docker Image to DockerHub: In Progress"
+                sh 'docker push snehadevopslearning/cleartrip:latest'
+                echo "Push Docker Image to DockerHub : In Progress"
+                sh 'whoami'
 
-}
+                   }
+              }
+
+               }
+          }
+        }
+ }
