@@ -69,4 +69,3 @@ sh 'docker push snehadevopslearning/cleartrip:latest'
 }
 
 }
-}
