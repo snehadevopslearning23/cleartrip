@@ -38,8 +38,7 @@ pipeline {
                 steps {
                 echo 'start building docker image !'
                 sh 'docker build -t snehadevopslearning/cleartrip .'
-                sh 'docker build -t cleartrip .'
-                 echo 'creating war artifact completed successfully!'
+                echo 'creating war artifact completed successfully!'
                 }
 
          }
