@@ -57,7 +57,7 @@ pipeline {
 stage('Docker push to Docker Hub'){
 steps{
 script｛
-withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')])}
+withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
 sh 'docker Login docker.io -U snehadevopslearning -p ${dockerhubCred}'
  echo "Push Docker Image to DockerHub: In Progress"
 sh 'docker push snehadevopslearning/cleartrip:latest'
@@ -65,6 +65,7 @@ sh 'docker push snehadevopslearning/cleartrip:latest'
  sh 'whoami'
  }
  }
-
+}
+}
 }
 }
