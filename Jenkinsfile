@@ -16,7 +16,6 @@ pipeline {
     sh 'mvn clean compile'
      echo 'Code Compilation is completed successfully!'
     }
-
     }
   stage('Code QA execution') {
     steps {
@@ -24,7 +23,6 @@ pipeline {
     sh 'mvn clean test'
      echo 'Junit test check completed successfully!'
     }
-
     }
 
       stage('Code package') {
@@ -67,8 +65,6 @@ sh 'docker push snehadevopslearning/cleartrip:latest'
  sh 'whoami'
  }
  }
-}
-}
 
 }
 }
