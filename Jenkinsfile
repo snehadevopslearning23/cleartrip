@@ -48,7 +48,6 @@ pipeline {
                              echo 'start image scanning !'
                              sh 'java --version'
                              sh 'mvn clean package'
-
                              }
 
                           }
@@ -79,11 +78,7 @@ pipeline {
                                                         }
                                                      }
                                                    }
-                                               }***\
-
-
-
-
+                                               }
         }
         }
 
