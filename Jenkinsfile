@@ -73,7 +73,7 @@ pipeline {
                                                         sh 'docker login http://3.110.88.154:8085/repository/cleartrip/ -u admin -p ${PASSWORD}'
                                                         echo "Push Docker Image to Nexus : In Progress"
                                                         sh 'docker tag snehadevopslearning/cleartrip:latest 3.110.88.154:8085/snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
-                                                        sh 'docker push 3.110.88.154:8085/cleartrip'
+                                                        sh 'docker push 3.110.88.154:8085/snehadevopslearning/cleartrip'
                                                         echo "Push Docker Image to Nexus : Completed"
                                                         }
                                                      }
