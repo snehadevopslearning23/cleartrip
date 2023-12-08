@@ -58,7 +58,7 @@ pipeline {
                                            withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                                            sh 'docker login docker.io -u snehadevopslearning -p ${dockerhubCred}'
                                            echo "Push Docker Image to DockerHub : In Progress"
-                                           sh 'docker push snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
+                                           sh 'docker push snehadevopslearning/cleartrip:latest'
                                            echo "Push Docker Image to DockerHub : In Progress"
                                            sh 'whoami'
                                            }
@@ -72,7 +72,7 @@ pipeline {
                                                         withCredentials([usernamePassword(credentialsId: 'nexuscred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                                                         sh 'docker login http://3.110.88.154:8085/repository/cleartrip/ -u admin -p ${PASSWORD}'
                                                         echo "Push Docker Image to Nexus : In Progress"
-                                                        sh 'docker tag cleartrip 3.110.88.154:8085/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
+                                                        sh 'docker tag cleartrip:latest 3.110.88.154:8085/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
                                                         sh 'docker push 3.110.88.154:8085/cleartrip'
                                                         echo "Push Docker Image to Nexus : Completed"
                                                         }
