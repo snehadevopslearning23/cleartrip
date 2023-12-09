@@ -85,10 +85,10 @@ pipeline {
                                                   steps {
                                                      script {
                                                         withCredentials([usernamePassword(credentialsId: 'nexuscred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                                                        sh 'docker login http://3.110.88.154:8085/repository/cleartrip/ -u admin -p ${PASSWORD}'
+                                                        sh 'docker login http://3.110.177.117:8085/repository/cleartrip/ -u admin -p ${PASSWORD}'
                                                         echo "Push Docker Image to Nexus : In Progress"
-                                                        sh 'docker tag snehadevopslearning/cleartrip:latest 3.110.88.154:8085/snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
-                                                        sh 'docker push 3.110.88.154:8085/snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
+                                                        sh 'docker tag snehadevopslearning/cleartrip:latest 3.110.177.117:8085/snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
+                                                        sh 'docker push 3.110.177.117:8085/snehadevopslearning/cleartrip:dev-cleartrip-v.1.${BUILD_NUMBER}'
                                                         echo "Push Docker Image to Nexus : Completed"
                                                         }
                                                      }
